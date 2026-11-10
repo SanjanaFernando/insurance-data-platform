@@ -1,0 +1,9 @@
+.venv/
+.env
+lake/
+out/
+target/
+logs/
+__pycache__/
+.pytest_cache/
+.ruff_cache/

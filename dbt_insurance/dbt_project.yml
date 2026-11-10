@@ -1,0 +1,11 @@
+name: insurance
+version: "1.0"
+config-version: 2
+profile: insurance
+model-paths: ["models"]
+models:
+  insurance:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

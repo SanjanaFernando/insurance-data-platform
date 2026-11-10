@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: stg_claims
+    columns:
+      - name: claim_id
+        tests: [unique, not_null]
+      - name: policy_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_policies')
+              field: policy_id
+      - name: claim_amount
+        tests: [not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['OPEN', 'APPROVED', 'REJECTED', 'PAID', 'UNKNOWN']
+  - name: stg_policies
+    columns:
+      - name: policy_id
+        tests: [unique, not_null]
+  - name: stg_weather
+    columns:
+      - name: weather_date
+        tests: [unique, not_null]
+  - name: mart_claims_daily
+    columns:
+      - name: weather_date
+        tests: [unique, not_null]

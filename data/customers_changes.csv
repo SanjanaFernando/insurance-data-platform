@@ -1,0 +1,41 @@
+customer_id,full_name,email,city,birth_date,signup_date
+486,Grace White,sclark@example.com,Colombo,1971-04-20,2023-12-31
+471,Amy Ayala,daniellegonzales@example.org,Matara,1998-06-27,2025-04-27
+327,Teresa Miller,samantha10@example.org,Kandy,1961-12-05,2024-08-11
+195,William Becker,andersoncolin@example.com,Kandy,1995-05-15,2023-11-05
+303,Alexandria Ward,david96@example.com,Galle,1981-06-14,2023-06-07
+305,Micheal Wang,fmiles@example.net,Jaffna,1980-11-25,2024-07-15
+365,Samuel Suarez,thompsonnancy@example.org,Kandy,1997-09-22,2023-08-16
+372,Kristina Wheeler,kenneth17@example.org,Matara,1969-09-08,2023-09-09
+348,William Barry,reynoldsdesiree@example.net,Kandy,2000-09-06,2023-05-24
+394,Angela Cummings,dawn74@example.com,Colombo,1976-11-08,2023-04-01
+353,Russell Elliott,karencontreras@example.org,Matara,1988-04-09,2025-01-06
+256,Brandon Hahn,rward@example.org,Jaffna,1958-04-11,2023-06-20
+248,Marie Johnson MD,dtran@example.net,Matara,1951-05-21,2023-06-06
+171,Jeffrey Carney,amymorris@example.org,Jaffna,1969-03-21,2023-09-27
+494,Darren Stewart,jennifer96@example.com,Colombo,2000-07-25,2024-12-12
+203,Emily Thompson,amy49@example.com,Kandy,1961-08-15,2023-08-13
+219,Melanie Larson,foxallison@example.com,Kandy,1955-03-25,2024-05-28
+364,John Black,lori82@example.org,Galle,1968-04-11,2024-04-06
+138,Julia Norris,christopher13@example.com,Matara,1983-10-31,2024-04-22
+141,Angela Bean,kmarshall@example.net,Jaffna,1975-12-29,2025-04-21
+346,Ashley Mendoza,franciscojones@example.org,Colombo,1967-05-16,2023-10-18
+453,Ricky Eaton,shawdon@example.org,Matara,1963-09-26,2024-04-13
+46,Todd Byrd,christinaturner@example.net,Matara,1997-07-18,2023-10-04
+151,Gloria Miranda,jeremytaylor@example.org,Negombo,1967-06-03,2024-12-18
+55,Gary Owens,clarkrobert@example.net,Galle,2003-11-01,2023-01-18
+251,Emily Ali,karenmarquez@example.com,Negombo,2002-11-15,2023-09-30
+54,Cynthia Rogers,taylorjesse@example.net,Jaffna,1959-05-31,2023-07-14
+155,Vincent Mueller,michealvalentine@example.com,Matara,1976-09-16,2023-09-14
+70,Nathan Freeman,hannahbrewer@example.com,Negombo,1975-12-14,2023-01-16
+220,Joshua Wagner,franklinbond@example.com,Galle,1957-05-13,2023-07-07
+458,Ronald Burke,cindydixon@example.org,Kandy,1991-05-30,2023-11-09
+79,Theresa Clark,josephmiller@example.org,Kandy,1960-08-03,2023-03-10
+268,William Byrd,vrasmussen@example.com,Jaffna,1956-10-14,2023-03-31
+443,Jessica Larsen,erinrivera@example.com,Colombo,1976-10-10,2023-11-23
+182,Maria Cole,david89@example.org,Negombo,1993-11-07,2023-04-28
+59,Joel Williams,dmurphy@example.com,Galle,1969-10-03,2025-03-12
+50,David Douglas Jr.,osbornejeffery@example.net,Kandy,1979-11-11,2023-02-15
+429,Mr. Matthew Flores,vaughangary@example.net,Kandy,1980-09-18,2024-07-25
+403,David Cordova Jr.,andreagray@example.org,Jaffna,1955-04-09,2024-02-09
+127,Shane Pugh,uparrish@example.org,Colombo,2005-01-31,2024-06-30

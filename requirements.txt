@@ -1,0 +1,8 @@
+pandas
+faker
+requests
+pytest
+ruff
+snowflake-connector-python[pandas]
+pyspark
+dbt-snowflake

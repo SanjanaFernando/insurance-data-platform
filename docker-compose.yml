@@ -1,0 +1,14 @@
+# One container running Airflow in "standalone" mode (web UI + scheduler + SQLite). Good for learning and demos.
+services:
+  airflow:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file: .env
+    environment:
+      PYTHONPATH: /opt/airflow/project
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./:/opt/airflow/project
+    command: standalone
