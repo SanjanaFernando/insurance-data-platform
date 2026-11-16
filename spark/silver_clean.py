@@ -3,6 +3,7 @@ Local:       python spark/silver_clean.py            (reads ./data, writes ./out
 Airflow:     LAKE_RAW and LAKE_SILVER environment variables set the input and output folders
 Databricks:  paste into a notebook cell and set BASE to your Volume path, e.g. /Volumes/workspace/default/raw"""
 import os
+import logging
 
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
@@ -12,6 +13,9 @@ BASE = os.getenv("LAKE_RAW") or ("/Volumes/workspace/default/raw" if ON_DATABRIC
 OUT = os.getenv("LAKE_SILVER") or ("/Volumes/workspace/default/silver" if ON_DATABRICKS else "out/silver")
 
 spark = SparkSession.builder.appName("silver_clean").getOrCreate()
+log = logging.getLogger("silver_clean")
+if not logging.getLogger().handlers:
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s - %(message)s")
 read = lambda pattern: spark.read.option("header", True).csv(f"{BASE}/{pattern}")   # all strings = schema-on-read
 
 # ---------- claims ----------
@@ -41,8 +45,23 @@ policies_silver = (read("policies.csv")
 # ---------- quality report ----------
 print("claims raw      :", claims_raw.count())
 print("claims silver   :", claims_silver.count())
-print("claims rejected :", rejects.count())
+reject_count = rejects.count()
+print("claims rejected :", reject_count)
 print("status values   :", sorted(r[0] for r in claims_silver.select("status").distinct().collect()))
+
+# Rejected rows are expected data quality events, so report them as errors for
+# visibility in Airflow while allowing the pipeline to continue to the reject file.
+if reject_count:
+    reason_counts = rejects.groupBy("reject_reason").count().collect()
+    for row in reason_counts:
+        sample_ids = [r[0] for r in (
+            rejects.filter(F.col("reject_reason") == row["reject_reason"])
+            .select("claim_id").limit(5).collect()
+        )]
+        log.error(
+            "DATA_QUALITY_REJECT reason=%s count=%d sample_claim_ids=%s",
+            row["reject_reason"], row["count"], sample_ids,
+        )
 
 # ---------- write ----------
 def write_csv(df, name):                     # one CSV file per table, easy to upload and COPY INTO
