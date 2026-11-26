@@ -5,10 +5,14 @@ Usage:  python load_raw.py            # day 1: customers, policies, claims_part1
         python load_raw.py --part2    # later: append claims_part2 (re-sent rows are removed by MERGE)"""
 import os
 import sys
+from pathlib import Path
 
 import pandas as pd
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().with_name(".env"), override=False)
 
 
 def connect():

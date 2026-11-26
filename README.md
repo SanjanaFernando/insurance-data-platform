@@ -18,7 +18,7 @@ Three data-engineering projects built on one synthetic insurance dataset (custom
 4. Project 2: copy `.env.example` to `.env`, run `docker compose up --build`, open http://localhost:8080 and trigger the `claims_pipeline` DAG.
 5. Project 3: `python -m extractor.extract_weather 2024-01-01 2026-10-31 --load`, then `cd dbt_insurance && dbt build --profiles-dir .`
 
-For the full manual walkthrough and expected Project 1 checkpoints, see [PROJECT1_MANUAL.md](PROJECT1_MANUAL.md).
+For the full walkthroughs and expected checkpoints, see [Project 1](PROJECT1_MANUAL.md), [Project 2](PROJECT2_MANUAL.md), and [Project 3](PROJECT3_MANUAL.md).
 
 ## Design decisions
 - Raw layer is all VARCHAR so loads never fail on bad data; cleaning happens in views.
