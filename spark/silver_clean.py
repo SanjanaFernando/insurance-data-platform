@@ -2,8 +2,8 @@
 Local:       python spark/silver_clean.py            (reads ./data, writes ./out/silver)
 Airflow:     LAKE_RAW and LAKE_SILVER environment variables set the input and output folders
 Databricks:  paste into a notebook cell and set BASE to your Volume path, e.g. /Volumes/workspace/default/raw"""
-import os
 import logging
+import os
 
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F

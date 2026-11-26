@@ -9,8 +9,8 @@ from pathlib import Path
 
 import pandas as pd
 import snowflake.connector
-from snowflake.connector.pandas_tools import write_pandas
 from dotenv import load_dotenv
+from snowflake.connector.pandas_tools import write_pandas
 
 load_dotenv(Path(__file__).resolve().with_name(".env"), override=False)
 
